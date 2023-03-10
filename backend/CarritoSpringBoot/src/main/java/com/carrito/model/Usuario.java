@@ -1,25 +1,40 @@
 package com.carrito.model;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
+//import jakarta.persistence.ManyToOne;
+import jakarta.persistence.Table;
+import java.util.List;
+
+@Entity
+@Table(name = "usuarios")
 public class Usuario {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String nombre;
-    private String apellido;    
-    
-    private String tipo;
+    private String apellido;
     private String email;
     private String password;
-
+    private boolean es_vip;
+    
+    @OneToMany(mappedBy = "usuario")
+    private List<Orden> ordenes;
+     
     public Usuario() {
     }
 
-    public Usuario(Integer id, String nombre, String apellido, String tipo, String email, String password) {
+    public Usuario(Integer id, String nombre, String apellido, String email, String password, boolean es_vip) {
         this.id = id;
         this.nombre = nombre;
         this.apellido = apellido;
-        this.tipo = tipo;
         this.email = email;
         this.password = password;
-    }
+        this.es_vip = es_vip;
+    }   
 
     public Integer getId() {
         return id;
@@ -45,14 +60,6 @@ public class Usuario {
         this.apellido = apellido;
     }
 
-    public String getTipo() {
-        return tipo;
-    }
-
-    public void setTipo(String tipo) {
-        this.tipo = tipo;
-    }
-
     public String getEmail() {
         return email;
     }
@@ -69,9 +76,26 @@ public class Usuario {
         this.password = password;
     }
 
+    public boolean getEs_vip() {
+        return es_vip;
+    }
+
+    public void setEs_vip(boolean es_vip) {
+        this.es_vip = es_vip;
+    }
+
+    public List<Orden> getOrdenes() {
+        return ordenes;
+    }
+
+    public void setOrdenes(List<Orden> ordenes) {
+        this.ordenes = ordenes;
+    }    
+    
+
     @Override
     public String toString() {
-        return "Usuario{" + "id=" + id + ", nombre=" + nombre + ", apellido=" + apellido + ", tipo=" + tipo + ", email=" + email + ", password=" + password + '}';
+        return "Usuario{" + "id=" + id + ", nombre=" + nombre + ", apellido=" + apellido + ", es_vip=" + es_vip + ", email=" + email + ", password=" + password + '}';
     }
     
     
