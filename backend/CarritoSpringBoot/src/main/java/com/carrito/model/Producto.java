@@ -1,24 +1,38 @@
 package com.carrito.model;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
+import jakarta.persistence.Table;
+import java.util.List;
+
+@Entity
+@Table( name = "productos")
 public class Producto {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String nombre;
     private String descripcion;
     private String imagen;
     private Double precio;
-    private int cantidad;
-
+    @OneToMany(mappedBy = "producto")
+    private List<DetalleOrden> detalleOrdenes;
+    
     public Producto() {
     }
 
-    public Producto(Integer id, String nombre, String descripcion, String imagen, Double precio, int cantidad) {
+    public Producto(Integer id, String nombre, String descripcion, String imagen, Double precio) {
         this.id = id;
         this.nombre = nombre;
         this.descripcion = descripcion;
         this.imagen = imagen;
         this.precio = precio;
-        this.cantidad = cantidad;
     }
+
+    
 
     public Integer getId() {
         return id;
@@ -60,17 +74,17 @@ public class Producto {
         this.precio = precio;
     }
 
-    public int getCantidad() {
-        return cantidad;
+    public List<DetalleOrden> getDetalleOrdenes() {
+        return detalleOrdenes;
     }
 
-    public void setCantidad(int cantidad) {
-        this.cantidad = cantidad;
+    public void setDetalleOrdenes(List<DetalleOrden> detalleOrdenes) {
+        this.detalleOrdenes = detalleOrdenes;
     }
 
     @Override
     public String toString() {
-        return "Producto{" + "id=" + id + ", nombre=" + nombre + ", descripcion=" + descripcion + ", imagen=" + imagen + ", precio=" + precio + ", cantidad=" + cantidad + '}';
+        return "Producto{" + "id=" + id + ", nombre=" + nombre + ", descripcion=" + descripcion + ", imagen=" + imagen + ", precio=" + precio + ", detalleOrdenes=" + detalleOrdenes + '}';
     }
     
     

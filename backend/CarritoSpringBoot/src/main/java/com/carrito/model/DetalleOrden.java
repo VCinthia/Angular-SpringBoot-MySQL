@@ -1,23 +1,36 @@
 package com.carrito.model;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.Table;
+
+@Entity
+@Table( name = "detalles")
 public class DetalleOrden {
-    private Integer id;
-    private String nombre;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;    
     private double cantidad;
     private double precio;
-    private boolean promocional;
-    private double total;
+    private double subtotal;
+    @ManyToOne
+    private Producto producto;
+    @ManyToOne
+    private Orden orden;    
 
     public DetalleOrden() {
     }
 
-    public DetalleOrden(Integer id, String nombre, double cantidad, double precio, boolean promocional, double total) {
+    public DetalleOrden(Integer id, Producto producto, double cantidad, double precio, double subtotal, Orden orden) {
         this.id = id;
-        this.nombre = nombre;
+        this.producto = producto;
         this.cantidad = cantidad;
         this.precio = precio;
-        this.promocional = promocional;
-        this.total = total;
+        this.subtotal = subtotal;
+        this.orden = orden;
     }
 
     public Integer getId() {
@@ -28,12 +41,12 @@ public class DetalleOrden {
         this.id = id;
     }
 
-    public String getNombre() {
-        return nombre;
+    public Producto getProducto() {
+        return producto;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    public void setProducto(Producto producto) {
+        this.producto = producto;
     }
 
     public double getCantidad() {
@@ -52,25 +65,25 @@ public class DetalleOrden {
         this.precio = precio;
     }
 
-    public boolean isPromocional() {
-        return promocional;
+    public double getSubtotal() {
+        return subtotal;
     }
 
-    public void setPromocional(boolean promocional) {
-        this.promocional = promocional;
+    public void setSubtotal(double subtotal) {
+        this.subtotal = subtotal;
     }
 
-    public double getTotal() {
-        return total;
+    public Orden getOrden() {
+        return orden;
     }
 
-    public void setTotal(double total) {
-        this.total = total;
+    public void setOrden(Orden orden) {
+        this.orden = orden;
     }
 
     @Override
     public String toString() {
-        return "DetalleOrden{" + "id=" + id + ", nombre=" + nombre + ", cantidad=" + cantidad + ", precio=" + precio + ", promocional=" + promocional + ", total=" + total + '}';
+        return "DetalleOrden{" + "id=" + id + ", producto=" + producto + ", cantidad=" + cantidad + ", precio=" + precio + ", subtotal=" + subtotal + ", orden=" + orden + '}';
     }
     
     
