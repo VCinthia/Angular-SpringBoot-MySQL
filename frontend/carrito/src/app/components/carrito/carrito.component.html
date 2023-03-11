@@ -3,11 +3,13 @@
 <section class="form__producto">
     <div class="wrapper">
         <form class="producto" data-form>
-            <p class="title">Cargar Producto</p>
-            <div class="input-container">
-                <input data-fecha-producto class="input" type="date" id="fecha-producto" nombre="fecha-producto"
-                    placeholder="Fecha de Lanzamiento" required />
-                <!-- <span class="input-menssage-error">Este campo es requerido</span> -->
+            <div class="detalle__productos">
+                <p class="title">Cargar Producto</p>
+                <div class="input-container">
+                    <input data-fecha-producto class="input__date" type="date" id="fecha-producto" nombre="fecha-producto"
+                        placeholder="Fecha de Lanzamiento" required />
+                    <!-- <span class="input-menssage-error">Este campo es requerido</span> -->
+                </div>
             </div>
             <div class="productos__ids">
                 <div class="producto__id">    
@@ -30,14 +32,19 @@
                             Precio desde BDD
                         </p>
                     </div>
+                    <div class="">
+                        <p class="input-container">
+                            Subtotal Suma $
+                        </p>
+                    </div>
     
-                    <div class="data-control">
-                        <div class="btn-edit">
-                            <button class=""><i class="populares__icon fas fa-edit"></i>Editar</button>
+                    <div class="input-container">
+                        <div class="btn__edit">
+                            <button class="crud__producto"><i class=" fas fa-plus-circle"></i></button>
                         </div>
     
-                        <div class="btn-delete">
-                            <button class=""><i class="populares__icon fas fa-trash-alt"></i>Eliminar</button>
+                        <div class="btn__delete">
+                            <button class="crud__producto"><i class=" fas fa-trash-alt"></i></button>
                         </div>
                     </div>
                 </div>
@@ -95,7 +102,7 @@
                 </div>
             </div>
 
-            <button>
+            <button class="cargar__form">
                 <span class="state">Cargar</span>
             </button>
 
