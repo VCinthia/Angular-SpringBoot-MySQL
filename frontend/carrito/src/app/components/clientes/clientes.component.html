@@ -1,0 +1,58 @@
+<app-nav></app-nav>
+
+<section class="form__producto">
+    <div class="wrapper">
+        <form class="producto" data-form>
+            <p class="title">Detalle Clientes</p>
+            <div class="productos__ids">
+                <div class="producto__id">
+                    <label class="input-container" for="">VIP</label>
+                    <select class="input-container" id="vip">
+                        <option value="1" id="si-vip">SI</option>
+                        <option value="0" id="no-vip">NO</option>
+                    </select>
+
+                    <label  class="input-container" for="">Desde</label>
+                    <input data-fecha-producto class="input__date input-container" type="date" id="fecha-desde-vip" nombre="fecha-desde" />
+    
+                    <label  class="input-container" for="">Hasta</label>
+                    <input data-fecha-producto class="input__date input-container" type="date" id="fecha-desde-vip" nombre="fecha-desde" />    
+                </div>
+            </div>
+            <button class="cargar__form">
+            <!-- <i class="spinner"></i> -->
+            <span class="state">Ingresar</span>
+          </button>
+        </form>
+        
+        <div class="producto productos__ids">
+            <div class="producto__id">
+                <div class="input-container">
+                    <img class="producto__imagen" src="../../../assets/img/cuphead-keyart-01-en-15dec21.webp">
+                </div>
+                <div class="">
+                    <p class="input-container">
+                        IDCliente desde BDD
+                    </p>
+                </div>
+                <div class="">
+                    <p class="input-container">
+                        Nombre + Apellido desde BDD
+                    </p>
+                </div>
+                <div class="">
+                    <p class="input-container">
+                        Email desde BDD
+                    </p>
+                </div>
+                <div class="">
+                    <p class="input-container">
+                        EsVIP desde BDD
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<app-footer></app-footer>

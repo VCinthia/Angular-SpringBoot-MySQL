@@ -22,7 +22,7 @@ body {
 }
 
 .producto__id{
-  background-color: #444;
+  /* background-color: #881515; */
   display: flex;
   align-items: center;
   flex-direction: row;/* 
@@ -37,9 +37,9 @@ body {
   justify-content: space-between;
 }
 
-.productos__ids{
+/* .productos__ids{
   margin-bottom: 2rem;
-}
+} */
 
 .producto {
   border-radius: 2px 2px 5px 5px;
@@ -89,8 +89,8 @@ body {
 
 input {
   display: block;
-  padding: 15px 10px;
-  margin-bottom: 10px;
+  padding: 15px 10px;/* 
+  margin-bottom: 10px; */
   width: 100%;
   border: 1px solid #ddd;
   transition: border-width 0.2s ease;
