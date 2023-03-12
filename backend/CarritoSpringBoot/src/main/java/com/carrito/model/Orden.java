@@ -14,7 +14,7 @@ import java.util.List;
 public class Orden {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;       
+    private Long id;       
     private Date fechaCreacion;
     private double subtotal;
     private boolean es_promocional;
@@ -27,7 +27,7 @@ public class Orden {
     public Orden() {
     }
 
-    public Orden(Integer id, Date fechaCreacion, double subtotal, boolean es_promocional, double total, Usuario usuario) {
+    public Orden(Long id, Date fechaCreacion, double subtotal, boolean es_promocional, double total, Usuario usuario) {
         this.id = id;
         this.fechaCreacion = fechaCreacion;
         this.subtotal = subtotal;
@@ -36,11 +36,11 @@ public class Orden {
         this.usuario = usuario;
     }
 
-    public Integer getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

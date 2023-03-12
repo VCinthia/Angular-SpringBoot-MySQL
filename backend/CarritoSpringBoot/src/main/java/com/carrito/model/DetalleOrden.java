@@ -12,10 +12,10 @@ import jakarta.persistence.Table;
 public class DetalleOrden {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;    
-    private double cantidad;
-    private double precio;
-    private double subtotal;
+    private Long id;    
+    private Integer cantidad;
+    //private Double precio;
+    private Double subtotal;
     @ManyToOne
     private Producto producto;
     @ManyToOne
@@ -24,20 +24,20 @@ public class DetalleOrden {
     public DetalleOrden() {
     }
 
-    public DetalleOrden(Integer id, Producto producto, double cantidad, double precio, double subtotal, Orden orden) {
+    public DetalleOrden(Long id, Producto producto, Integer cantidad/*, Double precio*/, Double subtotal, Orden orden) {
         this.id = id;
         this.producto = producto;
         this.cantidad = cantidad;
-        this.precio = precio;
+        //this.precio = precio;
         this.subtotal = subtotal;
         this.orden = orden;
     }
 
-    public Integer getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -49,27 +49,27 @@ public class DetalleOrden {
         this.producto = producto;
     }
 
-    public double getCantidad() {
+    public Integer getCantidad() {
         return cantidad;
     }
 
-    public void setCantidad(double cantidad) {
+    public void setCantidad(Integer cantidad) {
         this.cantidad = cantidad;
     }
 
-    public double getPrecio() {
+    /*public Double getPrecio() {
         return precio;
     }
 
-    public void setPrecio(double precio) {
+    public void setPrecio(Double precio) {
         this.precio = precio;
-    }
+    }*/
 
-    public double getSubtotal() {
+    public Double getSubtotal() {
         return subtotal;
     }
 
-    public void setSubtotal(double subtotal) {
+    public void setSubtotal(Double subtotal) {
         this.subtotal = subtotal;
     }
 
@@ -83,7 +83,7 @@ public class DetalleOrden {
 
     @Override
     public String toString() {
-        return "DetalleOrden{" + "id=" + id + ", producto=" + producto + ", cantidad=" + cantidad + ", precio=" + precio + ", subtotal=" + subtotal + ", orden=" + orden + '}';
+        return "DetalleOrden{" + "id=" + id + ", producto=" + producto + ", cantidad=" + cantidad + /*", precio=" + precio + */", subtotal=" + subtotal + ", orden=" + orden + '}';
     }
     
     

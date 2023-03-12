@@ -3,11 +3,13 @@
 <section class="form__producto">
     <div class="wrapper">
         <form class="producto" data-form>
-            <p class="title">Cargar Producto</p>
-            <div class="input-container">
-                <input data-fecha-producto class="input" type="date" id="fecha-producto" nombre="fecha-producto"
-                    placeholder="Fecha de Lanzamiento" required />
-                <!-- <span class="input-menssage-error">Este campo es requerido</span> -->
+            <div class="detalle__productos">
+                <p class="title">Cargar Producto</p>
+                <div class="input-container">
+                    <input data-fecha-producto class="input__date" type="date" id="fecha-producto" nombre="fecha-producto"
+                        placeholder="Fecha de Lanzamiento" required />
+                    <!-- <span class="input-menssage-error">Este campo es requerido</span> -->
+                </div>
             </div>
             <div class="productos__ids">
                 <div class="producto__id">    
@@ -30,44 +32,27 @@
                             Precio desde BDD
                         </p>
                     </div>
+                    <div class="">
+                        <p class="input-container">
+                            Subtotal Suma $
+                        </p>
+                    </div>
     
-                    <div class="data-control">
-                        <div class="btn-edit">
-                            <button class=""><i class="populares__icon fas fa-edit"></i>Editar</button>
+                    <div class="input-container">
+                        <div class="btn__edit">
+                            <button class="crud__producto"><i class=" fas fa-plus-circle"></i></button>
                         </div>
     
-                        <div class="btn-delete">
-                            <button class=""><i class="populares__icon fas fa-trash-alt"></i>Eliminar</button>
+                        <div class="btn__delete">
+                            <button class="crud__producto"><i class=" fas fa-trash-alt"></i></button>
                         </div>
                     </div>
                 </div>
-            </div>
+            </div>            
+        </form>
 
-            <!-- <div class="producto__id">
-                <ul id="experienciaList">
-                    <li *ngFor="let producto of productoList; let i = index">
-                        <h3>{{producto.descripcion}}</h3>
-                        <h6>{{producto.periodo}}</h6>
-                        <p>
-                            {{producto.descripcion}}
-                        </p>
-        
-                        <div ng *ngIf="isUserLogged" class="data-control">
-                            <div class="btn-edit">
-                              <button class="btn btn-right" data-bs-toggle="modal" data-bs-target="#experienciaForm" (click)="onEditarExperiencia(i)"><i class="bi bi-pen-fill"></i> Editar</button>
-                            </div>
-                            <div class="btn-delete">
-                              <button  class="btn btn-right" (click)="onEliminarExperiencia(i)"><i class="bi bi-x-circle-fill"></i> Eliminar</button>
-                            </div>
-                        </div>                
-                    </li>      
-                </ul>
-            </div> -->
-
-            
-
-                <p class="title">Detalle Carrito</p>
-
+        <div class="producto productos__ids">
+            <p class="title">Detalle Carrito</p>    
             <div class="producto__id">
                 <div class="input-container">
                     <img class="producto__imagen" src="../../../assets/img/cuphead-keyart-01-en-15dec21.webp">
@@ -94,12 +79,11 @@
                     </p>
                 </div>
             </div>
-
-            <button>
+    
+            <button class="cargar__form">
                 <span class="state">Cargar</span>
             </button>
-
-        </form>
+        </div>
 
     </div>
 </section>

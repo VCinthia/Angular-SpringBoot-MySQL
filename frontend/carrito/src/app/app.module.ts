@@ -13,6 +13,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { CarritoComponent } from './components/carrito/carrito.component';
 import { HistorialComponent } from './components/historial/historial.component';
 import { LoginComponent } from './components/login/login.component';
+import { ClientesComponent } from './components/clientes/clientes.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { LoginComponent } from './components/login/login.component';
     JuegosComponent,
     CarritoComponent,
     HistorialComponent,
-    LoginComponent
+    LoginComponent,
+    ClientesComponent
   ],
   imports: [
     BrowserModule,    
