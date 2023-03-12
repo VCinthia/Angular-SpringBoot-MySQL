@@ -13,7 +13,7 @@ import java.util.List;
 public class Producto {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private Long id;
     private String nombre;
     private String descripcion;
     private String imagen;
@@ -24,21 +24,20 @@ public class Producto {
     public Producto() {
     }
 
-    public Producto(Integer id, String nombre, String descripcion, String imagen, Double precio) {
+    public Producto(Long id, String nombre, String descripcion, String imagen, Double precio) {
         this.id = id;
         this.nombre = nombre;
         this.descripcion = descripcion;
         this.imagen = imagen;
         this.precio = precio;
     }
-
     
 
-    public Integer getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
