@@ -30,9 +30,9 @@ public class ProductoController {
         return productoService.getProducto();
     }
     
-    @GetMapping("productos/{id}")
+    @GetMapping("/productos/{id}")
     public Producto findProducto(@PathVariable Long id){
-        return productoService.findProducto(/*(long)1*/id);
+        return productoService.findProducto(id);
     }
     
     @PostMapping("/productos/create")

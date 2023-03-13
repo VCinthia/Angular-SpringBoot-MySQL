@@ -1,64 +1,32 @@
 <app-header></app-header>
 <main class="contenido">
-    <section class="populares">
-        <div class="populares__contenido">
-            <!-- <div class="populares__card"> -->
-            <!-- <img class="populares__card___imagen" src="${img}"> -->
-            <!-- <div class="populares__card___base">
-                    <div class="populares__card___header">
-                        <div class="populares__principal "> -->
+    <section class="populares" id="contenedorProd">
+        <div class="populares__contenido" id="productoList">
+            
+            <!-- LISTA DESDE BDD -->
 
-            <!--BOTON ELIMINAR-->
-            <!-- <button class="populares__boton btn-delete" type="button" id="${id}">
-                                <i class="populares__icon fas fa-trash-alt"></i> -->
-
-            <!--BOTON EDITAR-->
-            <!-- </button>
-                            <a class="populares__boton btn__edit populares__boton btn__edit" type="submit"
-                                href="../editarProducto.html?id=${id}">
-                                <i class="populares__icon fas fa-edit">
-                                </i>
-                            </a> -->
-            <!-- </button> -->
-            <!-- </div>
-                        <h5 class="populares__card___titulo">${nombre}</h5>
-                        <time class="populares__card___data" datetime="201-10-14">${fecha}</time>
-                    </div>
-                    <div class="populares__card___descripcion">
-                        ${descripcion}
-                    </div>
-                </div>
-            </div> -->
-
-            <!-- PRUEBAS DE FORMA -->
-
-            <div class="populares__card">
-                <img class="populares__card___imagen" src="./assets/img/fortnite.jpg">
+            <div class="populares__card" *ngFor="let juego of productoList; let i = index">
+                <img class="populares__card___imagen" [src]="juego.imagen">
                 <div class="populares__card___base">
                     <div class="populares__card___header">
 
-                        <h5 class="populares__card___titulo">Fornite</h5>
-                        <time class="populares__card___data" datetime="2017-07-25">25/07/2017</time>
+                        <h5 class="populares__card___titulo">{{juego.nombre}}</h5>
+                        
                     </div>
                     <div class="populares__card___descripcion">
-                        Fortnite es un juego electrónico en línea creado en 2017, desarrollado por Epic Games y lanzado
-                        como diferentes paquetes de software con diferentes modos de juego que comparten el mismo motor
-                        de juego y gráfico.
+                        {{juego.descripcion}}
                     </div>
                 </div>
 
-                <div class="populares__principal">
-                    <!--BOTON ELIMINAR-->
-                    <button class="populares__boton btn__delete">
-                        <i class="populares__icon fas fa-trash-alt"></i>
-                    </button>
-                    <!--BOTON AGREGAR-->
+                <!--BOTON AGREGAR-->
+                <!-- <div class="populares__principal">
                     <button class="populares__boton btn__edit">
                         <i class="fas fa-cart-plus"></i>
                     </button>
-                </div>
+                </div> -->
             </div>
-
+            <!--modal para ingresar cantidad-->
+            
         </div>
     </section>
 </main>

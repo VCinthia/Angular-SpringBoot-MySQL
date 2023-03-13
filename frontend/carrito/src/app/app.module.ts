@@ -14,6 +14,13 @@ import { CarritoComponent } from './components/carrito/carrito.component';
 import { HistorialComponent } from './components/historial/historial.component';
 import { LoginComponent } from './components/login/login.component';
 import { ClientesComponent } from './components/clientes/clientes.component';
+import { JuegoService } from './service/juego.service';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { InterceptorService } from './service/interceptor.service';
+import { DetalleService } from './service/detalle.service';
+import { UsuarioService } from './service/usuario.service';
+import { OrdenService } from './service/orden.service';
 
 @NgModule({
   declarations: [
@@ -32,9 +39,13 @@ import { ClientesComponent } from './components/clientes/clientes.component';
   ],
   imports: [
     BrowserModule,    
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
-  providers: [],
+  providers: [JuegoService, DetalleService, UsuarioService, OrdenService,
+    { provide:HTTP_INTERCEPTORS, useClass: InterceptorService, multi: true },],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

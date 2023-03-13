@@ -30,25 +30,30 @@ public class DetalleOrdenController {
     @Autowired
     private ProductoService productoService;
     @Autowired
-    //private OrdenService ordenService;
+    private OrdenService ordenService;
 
     @GetMapping("/detalles/show")
     @ResponseBody
     public List<DetalleOrden> getDetalle() {
         return detalleService.getDetalle();
     }
+    
+    @GetMapping("/detalles/{id}")
+    public DetalleOrden findDetalle(@PathVariable Long id){
+        return detalleService.findDetalle(id);
+    }
 
     @PostMapping("/detalles/create")
-    @ResponseBody
+    @ResponseBody//Producto y Producto son ManyToOne de DetalleOrden
     public String createDetalle(@RequestBody DetalleOrden detalleOrden) {
         Producto producto = productoService.findProducto(detalleOrden.getProducto().getId());
-        //Orden orden = ordenService.findOrden(detalleOrden.getOrden().getId());
+        Orden orden = ordenService.findOrden(detalleOrden.getOrden().getId());
         detalleOrden.setProducto(producto);
-        //detalleOrden.setOrden(orden);
+        detalleOrden.setOrden(orden);
         detalleService.createDetalle(detalleOrden);
         return "El detalle fue cargado correctamente";
     }
-
+    
     @DeleteMapping("/detalles/delete/{id}")
     public void deleteDetalle(@PathVariable Long id) {
         detalleService.deleteDetalle(id);
@@ -66,32 +71,15 @@ public class DetalleOrdenController {
             @RequestParam("cantidad") Integer nuevaCantidad,
             //@RequestParam("precio") Double nuevoPrecio,
             @RequestParam("subtotal") Double nuevoSubtotal,
-            @RequestParam("producto") Producto nuevoProducto//,
-            //@RequestParam("orden") Orden nuevaOrden
+            @RequestParam("producto") Producto nuevoProducto,
+            @RequestParam("orden") Orden nuevaOrden
     ) {
         DetalleOrden detalleOrden = detalleService.findDetalle(id);
         detalleOrden.setCantidad(nuevaCantidad);
         detalleOrden.setSubtotal(nuevoSubtotal);
         detalleOrden.setProducto(nuevoProducto);
-        //detalleOrden.setOrden(nuevaOrden);
+        detalleOrden.setOrden(nuevaOrden);
         detalleService.saveDetalle(detalleOrden);
         return detalleOrden;
     }
-
-    /*@PutMapping("/detalles/editar/{id}")
-    public DetalleOrden editDetalle(
-            @PathVariable Long id,
-            @RequestParam("cantidad") Integer nuevaCantidad,
-            @RequestParam("subtotal") Double nuevoSubtotal
-    ) {
-        DetalleOrden detalleOrden = detalleService.findDetalle(id);
-        Producto producto = detalleOrden.getProducto();
-        Orden orden = detalleOrden.getOrden();
-        detalleOrden.setCantidad(nuevaCantidad);
-        detalleOrden.setSubtotal(nuevoSubtotal);
-        detalleOrden.setProducto(producto);
-        detalleOrden.setOrden(orden);
-        detalleService.saveDetalle(detalleOrden);
-        return detalleOrden;
-    }*/
 }

@@ -1,5 +1,6 @@
 package com.carrito.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -10,6 +11,7 @@ import java.util.List;
 
 @Entity
 @Table( name = "productos")
+@JsonIgnoreProperties("detalleOrdenes")
 public class Producto {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
