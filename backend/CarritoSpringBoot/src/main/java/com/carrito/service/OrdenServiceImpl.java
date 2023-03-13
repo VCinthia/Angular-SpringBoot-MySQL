@@ -14,27 +14,27 @@ public class OrdenServiceImpl implements OrdenService {
 
     @Override
     public List<Orden> getOrden() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        return ordenRepository.findAll();
     }
 
     @Override
     public void createOrden(Orden orden) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        ordenRepository.save(orden);
     }
 
     @Override
     public void deleteOrden(Long id) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        ordenRepository.deleteById(id);
     }
 
     @Override
     public Orden findOrden(Long id) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        return ordenRepository.findById(id).orElse(null);
     }
 
     @Override
     public void saveOrden(Orden orden) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        ordenRepository.save(orden);
     }
 
     

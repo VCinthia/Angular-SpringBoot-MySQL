@@ -1,5 +1,6 @@
 package com.carrito.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -17,8 +18,10 @@ public class DetalleOrden {
     //private Double precio;
     private Double subtotal;
     @ManyToOne
+    //@JsonIgnore
     private Producto producto;
     @ManyToOne
+    //@JsonIgnore
     private Orden orden;    
 
     public DetalleOrden() {

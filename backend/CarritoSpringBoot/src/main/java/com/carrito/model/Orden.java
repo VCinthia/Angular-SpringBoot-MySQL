@@ -1,4 +1,6 @@
 package com.carrito.model;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -11,15 +13,17 @@ import java.util.List;
 
 @Entity
 @Table( name = "ordenes")
+@JsonIgnoreProperties("detalleOrdenes")
 public class Orden {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;       
     private Date fechaCreacion;
-    private double subtotal;
+    private Double subtotal;
     private boolean es_promocional;
-    private double total;
+    private Double total;
     @ManyToOne
+    //@JsonIgnore
     private Usuario usuario;
     @OneToMany(mappedBy = "orden")
     private List<DetalleOrden> detalleOrdenes;

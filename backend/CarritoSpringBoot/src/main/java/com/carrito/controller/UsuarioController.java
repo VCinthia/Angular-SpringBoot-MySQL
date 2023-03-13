@@ -1,6 +1,6 @@
 package com.carrito.controller;
 
-import com.carrito.model.Producto;
+
 import com.carrito.model.Usuario;
 import com.carrito.service.UsuarioService;
 import java.util.List;
@@ -27,6 +27,11 @@ public class UsuarioController {
     @ResponseBody
     public List<Usuario> getUsuario () {
         return usuarioService.getUsuario();
+    }
+    
+    @GetMapping("/usuarios/{id}")
+    public Usuario findUsuario(@PathVariable Long id){
+        return usuarioService.findUsuario(id);
     }
     
     @PostMapping("/usuarios/create")

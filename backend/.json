@@ -1,0 +1,264 @@
+{
+	"id": "09f5f5af-7a17-452b-8103-d6438813f714",
+	"name": "Carrito",
+	"timestamp": "2023-03-13T16:54:57.914Z",
+	"collection_id": "21134279-d9cf4c43-3e29-4aee-86e8-8f1fbaaf7530",
+	"folder_id": 0,
+	"environment_id": "0",
+	"totalPass": 0,
+	"delay": 0,
+	"persist": true,
+	"status": "finished",
+	"startedAt": "2023-03-13T16:54:53.663Z",
+	"totalFail": 0,
+	"results": [
+		{
+			"id": "ddb92e50-7079-43ed-a3e1-a4b47107e0c2",
+			"name": "CreateProducto",
+			"url": "localhost:8080/productos/create",
+			"time": 1646,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				1646
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "5b8012d6-382f-4a65-a863-a596b74e4439",
+			"name": "ShowProducto",
+			"url": "localhost:8080/productos/show",
+			"time": 501,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				501
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "c2140b5c-deea-4cc4-88b1-8c1f33d88e56",
+			"name": "DeleteProducto",
+			"url": "localhost:8080/productos/delete/2",
+			"time": 297,
+			"responseCode": {
+				"code": 500,
+				"name": "Internal Server Error"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				297
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "3004f6c1-c831-4912-b36c-2583222cb677",
+			"name": "CreateUsuario",
+			"url": "localhost:8080/usuario/create",
+			"time": 20,
+			"responseCode": {
+				"code": 404,
+				"name": "Not Found"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				20
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "bee9bc7d-03dc-44e6-bd01-e8a8200bf24d",
+			"name": "ShowUsuario",
+			"url": "localhost:8080/usuarios/show",
+			"time": 12,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				12
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "1556efb7-557e-4caa-b30a-e78d0414e4b7",
+			"name": "CreateDetalleOrden",
+			"url": "localhost:8080/detalles/create",
+			"time": 39,
+			"responseCode": {
+				"code": 500,
+				"name": "Internal Server Error"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				39
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "766d278c-dc98-43bd-8226-3e0bf048dea9",
+			"name": "ShowDetalleOrden",
+			"url": "localhost:8080/detalles/show",
+			"time": 25,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				25
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "ba8dc56e-21a8-4e0f-82ab-1fe71c7d438e",
+			"name": "DeleteDetalleOrden",
+			"url": "localhost:8080/detalles/delete/1",
+			"time": 7,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				7
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "50291cec-40e9-4714-ae41-08c11bf505eb",
+			"name": "CreateOrden",
+			"url": "localhost:8080/ordenes/create",
+			"time": 72,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				72
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "506f5539-b6c2-4fad-9993-ac5f9fd63336",
+			"name": "ShowOrden",
+			"url": "localhost:8080/ordenes/show",
+			"time": 12,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				12
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "8e67112c-6d02-4194-ba62-334d4ae9a008",
+			"name": "DeleteOrden",
+			"url": "localhost:8080/ordenes/delete/1",
+			"time": 123,
+			"responseCode": {
+				"code": 500,
+				"name": "Internal Server Error"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				123
+			],
+			"allTests": [
+				{}
+			]
+		}
+	],
+	"count": 1,
+	"totalTime": 2754,
+	"collection": {
+		"requests": [
+			{
+				"id": "ddb92e50-7079-43ed-a3e1-a4b47107e0c2",
+				"method": "POST"
+			},
+			{
+				"id": "5b8012d6-382f-4a65-a863-a596b74e4439",
+				"method": "GET"
+			},
+			{
+				"id": "c2140b5c-deea-4cc4-88b1-8c1f33d88e56",
+				"method": "DELETE"
+			},
+			{
+				"id": "3004f6c1-c831-4912-b36c-2583222cb677",
+				"method": "POST"
+			},
+			{
+				"id": "bee9bc7d-03dc-44e6-bd01-e8a8200bf24d",
+				"method": "GET"
+			},
+			{
+				"id": "1556efb7-557e-4caa-b30a-e78d0414e4b7",
+				"method": "POST"
+			},
+			{
+				"id": "766d278c-dc98-43bd-8226-3e0bf048dea9",
+				"method": "GET"
+			},
+			{
+				"id": "ba8dc56e-21a8-4e0f-82ab-1fe71c7d438e",
+				"method": "DELETE"
+			},
+			{
+				"id": "50291cec-40e9-4714-ae41-08c11bf505eb",
+				"method": "POST"
+			},
+			{
+				"id": "506f5539-b6c2-4fad-9993-ac5f9fd63336",
+				"method": "GET"
+			},
+			{
+				"id": "8e67112c-6d02-4194-ba62-334d4ae9a008",
+				"method": "DELETE"
+			}
+		]
+	}
+}
